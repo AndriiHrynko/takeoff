@@ -1,4 +1,5 @@
 push_me.txt
+git_log.sh
 *.swp
 git_log_.sh
 .DS_Store
