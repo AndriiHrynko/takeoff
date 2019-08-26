@@ -1,2 +1,7 @@
 push_me.txt
 *.swp
+git_log_.sh
+.DS_Store
+2 ._.DS_Store
+3 *.o
+4 *.out
