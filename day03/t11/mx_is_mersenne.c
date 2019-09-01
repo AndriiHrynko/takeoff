@@ -5,9 +5,9 @@ double mx_pow(double n, unsigned int pow);
 bool mx_is_prime(int num);
 
 bool mx_is_mersenne(int n){
-    if (n > 0){ 
-        for (int i = 1; i <= n; i++){
-            if ((mx_pow(2, i) - 1) == n)
+    if (n > 0 && mx_is_prime(n)){ 
+        for (int pow = 2; pow < n; pow++){
+            if (mx_is_prime(pow) && (mx_pow(2, pow) - 1) == n)
                 return true;
         }
     }
@@ -16,7 +16,7 @@ bool mx_is_mersenne(int n){
 /*
 int main(){
     printf("1 true %d\n", mx_is_mersenne(1));
-    printf("2 false %d\n", mx_is_mersenne(2));
+    printf("11 false %d\n", mx_is_mersenne(11));
     printf("3 true %d\n", mx_is_mersenne(3));
     printf("4 false %d\n", mx_is_mersenne(4));
     printf("5 false %d\n", mx_is_mersenne(5));

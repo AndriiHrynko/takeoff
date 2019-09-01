@@ -4,17 +4,17 @@
 
 bool mx_is_prime(int num){
 
-    time_t seconds;
-
-    seconds = time(NULL);
+    // time_t seconds;
+    // seconds = time(NULL);
 
     if (num < 2)
         return false;
 
-    for (int i = 2; i < num; i++){
+    for (int i = 2; i < num / 2; i++){
         if (num % i == 0)
             return false;
     }
+    // printf("%ld\n", seconds / 100000000);
     return true;
 }
 /*
