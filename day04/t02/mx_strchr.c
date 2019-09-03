@@ -1,4 +1,4 @@
-#include <stdio.h>
+// #include <stdio.h>
 
 char *mx_strchr(const char *s, int c){
     while(*s){
@@ -8,8 +8,9 @@ char *mx_strchr(const char *s, int c){
     }
     return 0;
 }
-
+/*
 int main(){
     printf("%s\n", mx_strchr("abc", 99));
     return 0;
 }
+*/
