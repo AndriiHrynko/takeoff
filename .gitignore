@@ -6,3 +6,5 @@ git_log.sh
 *.o
 *.out
 gg
+minilibmx.a
+
