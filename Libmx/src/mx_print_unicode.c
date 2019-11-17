@@ -1,5 +1,6 @@
-#include <unistd.h>
-#include <wchar.h>
+// #include <unistd.h>
+// #include <wchar.h>
+#include "../inc/libmx.h"
 
 void mx_print_unicode(wchar_t c) 
 {
@@ -11,7 +12,7 @@ void mx_print_unicode(wchar_t c)
     }
     else if (c < 0x0800 /* 2048 */) 
     {
-    char out[2];/* 2 bytes  */
+    char out[2]; /* 2 bytes  */
         out[0] = (c >> 6 & 0x1F /* 127 */) | 0xC0;
         out[1] = (c >> 0 & 0x3F /* 63 */) | 0x80;
         write(1, out, 2);
@@ -35,9 +36,10 @@ void mx_print_unicode(wchar_t c)
         write(1, out, 4);
      }
 }
-
+/*
 int main()
 {
-    mx_print_unicode(0x1F603);
+    mx_print_unicode(128515);
     return 0;
 }
+*/

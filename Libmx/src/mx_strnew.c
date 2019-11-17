@@ -3,7 +3,7 @@
 
 char *mx_strnew(const int size)
 {
-	char *s = (char*)malloc(size + 1);
+	char *s = malloc(size);
 
 	if (s == NULL)
 		return NULL;
