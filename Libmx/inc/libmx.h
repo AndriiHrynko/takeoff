@@ -1,3 +1,6 @@
+#ifndef LIBMX
+#define LIBMX
+
 /* UTILS PACK */
 void mx_printchar(char c);
 void mx_print_unicode(wchar_t c);
@@ -37,7 +40,7 @@ char *mx_del_extra_spaces(const char *str);
 char **mx_strsplit(const char *s, char c);
 char *mx_strjoin(const char *s1, const char *s2);
 char *mx_file_to_str(const char *file);
-int mx_read_line(char **lineptr, int buf_size, char delim, const int fd);
+int mx_read_line(char **lineptr, size_t buf_size, char delim, const int fd);
 char *mx_replace_substr(const char *str, const char *sub, const char *replace);
 
 /* MEMORY PACK */
@@ -59,3 +62,5 @@ void mx_pop_front(t_list **head);
 void mx_pop_back(t_list **head);
 int mx_list_size(t_list *list);
 t_list *mx_sort_list(t_list *lst, bool (*cmp)(void *, void *));
+
+#endif
