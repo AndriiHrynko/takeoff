@@ -41,7 +41,7 @@ int mx_quicksort(char **arr, int left, int right)
 
     return swaps;
 }
-
+/*
 int main()
 {
     char *arr[] = {"Michelangelo", "Donatello", "Leonardo", "Raphael"};
@@ -50,3 +50,4 @@ int main()
 
     return 0;
 }
+*/
