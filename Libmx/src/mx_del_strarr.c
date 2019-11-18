@@ -2,9 +2,12 @@
 
 void mx_del_strarr(char ***arr)
 {
+    if (arr != NULL)
+        return;
+
     char **ptr_arr = *arr;
 
-    while (*ptr_arr) 
+    while (*ptr_arr)
     {
         mx_strdel(ptr_arr);
         ptr_arr++;
@@ -12,22 +15,24 @@ void mx_del_strarr(char ***arr)
 
     free(*arr);
     *arr = NULL;
+    arr = NULL;
 }
 /*
-int main()
+int main() 
 {
-    char **str = malloc(3 * sizeof(char));
+    char *s0 = (char *) malloc(5);
+    char *s1 = (char *) malloc(6);
+    char *s2 = (char *) malloc(3);
+    char **ss = (char **) malloc(4 *sizeof(char *));
 
-    str[0] = mx_strnew(3 * sizeof(char));
-    str[1] = mx_strnew(3 * sizeof(char));
-    str[2] = NULL;
+    ss[0] = s0;
+    ss[1] = s1;
+    ss[2] = s2;
+    ss[3] = NULL;
 
-    mx_strcpy(str[0], "abc");
-    mx_strcpy(str[1], "def");
+    mx_del_strarr(&ss);
 
-    printf("%s %s\n", str[0], str[1]);
-    
-    mx_del_strarr(&str);
+    system("leaks -q libmx");
 
     return 0;
 }
